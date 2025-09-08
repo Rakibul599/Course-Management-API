@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const registerRouter = require("./routes/registerRouter");
 const loginRouter = require("./routes/loginRouter");
 const courseRouter = require("./routes/courseRouter");
+const refreshRouter = require("./routes/refreshRouter");
 
 const app = express();
 dotenv.config();
@@ -20,6 +21,7 @@ mongoose
 // route handle
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
+app.use("/refresh", refreshRouter);
 app.use("/addcourse", courseRouter);
 
 // Global error handler
