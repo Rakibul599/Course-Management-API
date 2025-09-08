@@ -26,11 +26,6 @@ async function newRegister(req,res,next)
         res.status(500).json({"message":error.message});
     }
 
-    // 
-
-
-    
-    res.status(200).json({"name":"Rakibul"})
 }
 
 module.exports={

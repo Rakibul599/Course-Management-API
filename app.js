@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
 const registerRouter = require("./routes/registerRouter");
+const loginRouter = require("./routes/loginRouter");
 
 const app = express();
 dotenv.config();
@@ -17,6 +18,7 @@ mongoose
 
 // route handle
 app.use("/register", registerRouter);
+app.use("/login", loginRouter);
 
 // Global error handler
 app.use((err, req, res, next) => {
