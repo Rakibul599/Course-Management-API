@@ -17,6 +17,38 @@ async function newCourse(req,res,next)
 
 }
 
+
+
+async function getAllCourse(req,res,next)
+{
+    try {
+        let allCourse=await Course.find();
+        res.status(200).json({allCourse});
+    } catch (error) {
+        res.status(500).json({"message":error.message});
+    }
+}
+async function getCourseById(req,res,next)
+{
+    const {id} = req.query;
+    console.log(id)
+    try {
+        let course=await Course.findById(id);
+        if(course)
+        {
+            res.status(200).json({course});
+        }
+        else{
+            return res.status(404).json({ message: "Course not found" });
+        }
+        
+    } catch (error) {
+        res.status(500).json({"message":error.message});
+    }
+}
+
 module.exports={
     newCourse,
+    getAllCourse,
+    getCourseById
 }

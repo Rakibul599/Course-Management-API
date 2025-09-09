@@ -22,7 +22,7 @@ mongoose
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
 app.use("/refresh", refreshRouter);
-app.use("/addcourse", courseRouter);
+app.use("/course", courseRouter);
 
 // Global error handler
 app.use((err, req, res, next) => {
