@@ -6,6 +6,7 @@ const registerRouter = require("./routes/registerRouter");
 const loginRouter = require("./routes/loginRouter");
 const courseRouter = require("./routes/courseRouter");
 const refreshRouter = require("./routes/refreshRouter");
+const purchaseRouter = require("./routes/purchaseRouter");
 
 const app = express();
 dotenv.config();
@@ -24,6 +25,7 @@ app.use("/login", loginRouter);
 app.use("/refresh", refreshRouter);
 app.use("/course", courseRouter);
 app.use("/delete", courseRouter);
+app.use("/purchase", purchaseRouter);
 
 // Global error handler
 app.use((err, req, res, next) => {
