@@ -1,6 +1,6 @@
 const express=require('express');
 const {newRegister}=require('../controller/registrationController');
-const {newUservalidators,newUserValidationHandler}=require('../middleware/registrationValidator')
+const {newUservalidators,newUserValidationHandler}=require('../middleware/registrationValidator');
 
 const router=express.Router();
 // Register Router
