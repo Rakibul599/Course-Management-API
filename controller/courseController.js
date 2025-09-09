@@ -18,7 +18,7 @@ async function newCourse(req,res,next)
 }
 
 
-
+// Get all Course
 async function getAllCourse(req,res,next)
 {
     try {
@@ -28,6 +28,7 @@ async function getAllCourse(req,res,next)
         res.status(500).json({"message":error.message});
     }
 }
+// get single course by id
 async function getCourseById(req,res,next)
 {
     const {id} = req.query;
@@ -46,9 +47,29 @@ async function getCourseById(req,res,next)
         res.status(500).json({"message":error.message});
     }
 }
+// delete course by id
+async function deleteCourseById(req,res,next)
+{
+    const {id} = req.query;
+    console.log(id)
+       try {
+        let course=await Course.findByIdAndDelete(id);
+        if(course)
+        {
+            res.json({ message: 'Course deleted',"Info":course });
+        }
+        else{
+            return res.status(404).json({ message: "Course not found" });
+        }
+        
+    } catch (error) {
+        res.status(500).json({"message":error.message});
+    }
+}
 
 module.exports={
     newCourse,
     getAllCourse,
-    getCourseById
+    getCourseById,
+    deleteCourseById
 }

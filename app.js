@@ -23,6 +23,7 @@ app.use("/register", registerRouter);
 app.use("/login", loginRouter);
 app.use("/refresh", refreshRouter);
 app.use("/course", courseRouter);
+app.use("/delete", courseRouter);
 
 // Global error handler
 app.use((err, req, res, next) => {
