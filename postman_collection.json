@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "d51c8d8c-453f-4239-91af-1fd9ed9fff63",
+		"name": "postman_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40385647"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Rakibul Alam\",\n    \"email\":\"rakibulalam599@gmail.com\",\n    \"password\":\"Rak@1234\",\n    \"role\":\"user\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"email\":\"rakibulalam59900@gmail.com\",\n    \"password\":\"Rak@1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/refresh",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2OGJmMjBiNTdlZDRmM2Y5Y2VhYjA1NzIiLCJuYW1lIjoicmFraWJ1bCIsImVtYWlsIjoicmFraWJ1bGFsYW01OTkwMEBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTc0MjM0NjMsImV4cCI6MTc1ODAyODI2M30.hLmdldkwAbEu1vEgti1IzRy1vg43AVuP6kzfZYX5UAk\"\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/course/addcourse",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2OGJmMjBiNTdlZDRmM2Y5Y2VhYjA1NzIiLCJuYW1lIjoicmFraWJ1bCIsImVtYWlsIjoicmFraWJ1bGFsYW01OTkwMEBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTc0MjM2MzMsImV4cCI6MTc1NzQyNDUzM30.Ug7PeqGx6sC9Pw0ybFCO3Mj-pQBMhAbKVHdJsvZ2GlE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Full-Stack Web Development\",\n  \"description\": \"Learn how to build web applications using the MERN stack (MongoDB, Express.js, React, Node.js).\",\n  \"price\": 200,\n  \"instructor\": \"Rakibul Alam\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/course/addcourse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"course",
+						"addcourse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/course/getallcourse",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/course/getallcourse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"course",
+						"getallcourse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/course/getcoursebyid?id=68c028b29129ea68c8e50388",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/course/getcoursebyid?id=68c028b29129ea68c8e50388",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"course",
+						"getcoursebyid"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "68c028b29129ea68c8e50388"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/course/deletecoursebyid?id=68bfc028286d548c661525d0",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2OGJmMjBiNTdlZDRmM2Y5Y2VhYjA1NzIiLCJuYW1lIjoicmFraWJ1bCIsImVtYWlsIjoicmFraWJ1bGFsYW01OTkwMEBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTc0MjQyODcsImV4cCI6MTc1NzQyNTE4N30.1ttvFjC0f-jMqnj9TiUO_bu3lmZi7UZM11oo73CZ3AU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/course/deletecoursebyid?id=68bfc028286d548c661525d0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"course",
+						"deletecoursebyid"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "68bfc028286d548c661525d0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/purchase/purchasescourse",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2OGJmMjBiNTdlZDRmM2Y5Y2VhYjA1NzIiLCJuYW1lIjoicmFraWJ1bCIsImVtYWlsIjoicmFraWJ1bGFsYW01OTkwMEBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTc0MjQyODcsImV4cCI6MTc1NzQyNTE4N30.1ttvFjC0f-jMqnj9TiUO_bu3lmZi7UZM11oo73CZ3AU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"courseId\":\"68c028b29129ea68c8e50388\"\n   \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/purchase/purchasescourse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"purchase",
+						"purchasescourse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/purchase/mycourse",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2OGJmMjBiNTdlZDRmM2Y5Y2VhYjA1NzIiLCJuYW1lIjoicmFraWJ1bCIsImVtYWlsIjoicmFraWJ1bGFsYW01OTkwMEBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTc0MjQyODcsImV4cCI6MTc1NzQyNTE4N30.1ttvFjC0f-jMqnj9TiUO_bu3lmZi7UZM11oo73CZ3AU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/purchase/mycourse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"purchase",
+						"mycourse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/logout",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2OGJmMjBiNTdlZDRmM2Y5Y2VhYjA1NzIiLCJuYW1lIjoicmFraWJ1bCIsImVtYWlsIjoicmFraWJ1bGFsYW01OTkwMEBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTc0MjQyODcsImV4cCI6MTc1ODAyOTA4N30._XoXTEsMyl3s5dWNIvHTlcREYBZttT3Ru7UGbMSjdok\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

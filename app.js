@@ -1,13 +1,16 @@
+// Importing required modules
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-
+// Importing route files
 const registerRouter = require("./routes/registerRouter");
 const loginRouter = require("./routes/loginRouter");
 const courseRouter = require("./routes/courseRouter");
 const refreshRouter = require("./routes/refreshRouter");
 const purchaseRouter = require("./routes/purchaseRouter");
+const logoutRouter = require("./routes/logoutRouter");
 
+// Initialize the Express app
 const app = express();
 dotenv.config();
 
@@ -26,6 +29,7 @@ app.use("/refresh", refreshRouter);
 app.use("/course", courseRouter);
 app.use("/delete", courseRouter);
 app.use("/purchase", purchaseRouter);
+app.use("/logout", logoutRouter);
 
 // Global error handler
 app.use((err, req, res, next) => {

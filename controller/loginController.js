@@ -2,26 +2,30 @@ const User = require("../model/People");
 const bcrypt = require("bcrypt");
 const { signAccessToken, signRefreshToken } = require("../utils/Token");
 
-// new registration controller
+// Login function
 async function loginUser(req, res, next) {
   //Destructuring user info
   const { email, password } = req.body;
 
   try {
-    // Save user info in database
+    // Find user by email in database
     let user = await User.findOne({ email });
 
     if (user) {
+      // Compare provided password with hashed password stored in DB
       const isValidpassword = await bcrypt.compare(password, user.password);
       if (isValidpassword) {
+        // Prepare user information payload for JWT
         let userInfo = {
           userid: user._id,
           name: user.name,
           email: user.email,
           role: user.role,
         };
+        // Generate access and refresh tokens
         const accessToken = signAccessToken(userInfo);
         const refreshToken = signRefreshToken(userInfo);
+
         user.refreshToken = refreshToken;
         await user.save();
 

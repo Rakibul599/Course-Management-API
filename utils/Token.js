@@ -1,3 +1,5 @@
+
+// Importing jsonwebtoken
 const jwt = require('jsonwebtoken');
 
 function signAccessToken(payload) {

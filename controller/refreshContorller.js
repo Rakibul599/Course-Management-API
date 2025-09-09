@@ -1,6 +1,6 @@
 const User = require('../model/People');
 const { signAccessToken, signRefreshToken, verifyRefreshToken } = require('../utils/Token');
-
+// Refresh token handler
 async function refresh(req, res, next) {
   const { refreshToken } = req.body;
 
@@ -9,6 +9,7 @@ async function refresh(req, res, next) {
   }
 
   try {
+    // Verify provided refresh token and decode payload
     const payload = await verifyRefreshToken(refreshToken); 
     console.log("Decoded payload:", payload);
 
@@ -16,26 +17,26 @@ async function refresh(req, res, next) {
     if (!user) {
       return res.status(401).json({ message: "User not found" });
     }
-    // console.log(user.refreshToken)
-    // console.log(refreshToken)
+
+      // Check if stored refresh token exists and matches the one provided
     if (!user.refreshToken || user.refreshToken !== refreshToken) {
       return res.status(401).json({ message: "Invalid refresh token" });
     }
-
+    // Generate a new access token
     const newAccess = signAccessToken({
       userid: user._id,
       name: user.name,
       email: user.email,
       role: user.role
     });
-
+    // Generate a new refresh token
     const newRefresh = signRefreshToken({
       userid: user._id,
       name: user.name,
       email: user.email,
       role: user.role
     });
-
+    // Update stored refresh token in DB
     user.refreshToken = newRefresh;
     await user.save();
 
